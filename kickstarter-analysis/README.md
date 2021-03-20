@@ -18,7 +18,7 @@ Given the trend in successful campaigns depending on time of year, I recommend t
 
 ### Analysis of Outcomes Based on Goals
 
-Analysis was performed on the success rate of play related kickstarter campaigns as a function of campaign financial goal targets. Assessing the plot of campaign outcomes for play campaigns based on goal amount we see that there is a trend in outcome depending on the target goal amount.
+Analysis was performed on the success rate of play related kickstarter campaigns as a function of campaign financial goal targets. Assessing the plot of campaign outcomes for play campaigns based on goal amount we see that there is a trend in outcome depending on the target goal amount. ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/kickstarter-analysis/resources/Outcomes_vs_Goals.png)
 
 The percentage of successful campaigns is larger at lower goal totals and lower at larger goal totals. The percentage of failed campains follows the opposite trend with lower percentages at lower goal totals and higher percentages at higher goal totals. There were zero historical canceled play related campaigns.
 
