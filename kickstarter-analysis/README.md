@@ -10,7 +10,7 @@ The purpose of this project is to provide analysis of historical kickstar campai
 
 ### Analysis of Outcomes Based on Launch Date
 
-Analysis was performed on quantity of successful, failed, and canceled theater related kickstarter campaigns as a function of the month at which the campaign started. Assessing the ![plot](https://github.com/aricciardelli2/UCB-Projects/blob/main/kickstarter-analysis/resources/Theater_Outcomes_vs_Launch.png) plot of campaign outcomes for theater campaigns based on launch date we see that there is a trend in outcome depending on the month of the launch date.
+Analysis was performed on quantity of successful, failed, and canceled theater related kickstarter campaigns as a function of the month at which the campaign started. Assessing the plot of campaign outcomes for theater campaigns based on launch date we see that there is a trend in outcome depending on the month of the launch date. ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/kickstarter-analysis/resources/Theater_Outcomes_vs_Launch.png)
 
 The number of successful campaigns is larger in the Summer months (May - August), with May having the hightest number of successful campaigns. Additionally, the number of successful campaigns is smaller at the end of the year (November - December), with December having the lowest number of successful campaigns. The number of failed and canceled campaigns stays relatively constant throughout the year.
 
