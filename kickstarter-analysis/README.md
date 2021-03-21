@@ -4,7 +4,7 @@
 
 ### Purpose
 
-The purpose of this project is to provide analysis of historical kickstar campaigns to provide insights for Louise's future kickstarter campaign to fund her play. The analysis of historical campaigns focuses on campaign success depending on time of year and campaign financial goal targets.
+The purpose of this project is to provide insights for Louise's future Kickstarter campaign to fund her play *Fever* by providing analysis of historical Kickstar campaigns. The analysis of historical campaigns focuses on providing information on when Louise should launch her Kickstarter campaign and what the financial goal targets should be to maximize the success of her campaign.
 
 ## Analysis and Challenges
 
