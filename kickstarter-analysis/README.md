@@ -30,6 +30,8 @@ Given the trend in successful campaigns depending on goal total, I recommend tha
 
 ### Challenges and Difficulties Encountered
 
+The analysis provided to Louise based on historical campaigns did not encounter any significant challenges. This was due to the quality of the data provided by Kickstarter. If the data was difficult to collect from Kickstarter or when collect, was difficult to parse or understand, a lot more effort would have been needed to transform the data into a format that was usable for analysis.
+
 ## Results
 
 - What are two conclusions you can draw about the Outcomes based on Launch Date?
