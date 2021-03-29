@@ -26,12 +26,12 @@ Assessing the results from both 2017 and 2018 above, only **ENPH** and **RUN** h
 
 ### Analysis of Subroutine Runtime Performance
 
-The code that was used to deliver these results was initially developed and then refactored to run faster. The original code had an average runtime for 2017 and 2018 of 0.53125 seconds as seen in the images below. ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2017_stock_performance.png)
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2017_stock_performance.png)
+The code that was used to deliver these results was initially developed and then refactored to run faster. The original code had an average runtime for 2017 and 2018 of 0.53125 seconds as seen in the images below. ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2017_old_runtime.png)
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2018_old_runtime.png)
 
 The refactored code now has an average runtime for 2017 and 2018 of 0.1074219 seconds as seen in the images below.
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2017_stock_performance.png)
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/2017_stock_performance.png)
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/VBA_Challenge_2017.png)
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/resources/VBA_Challenge_2018.png)
 
 The refactoring of the code used to determine the values of interest for the targeted stocks for Steve to help his parents invest in successful stocks lead to an improvment of runtime performance of 79.8%
 
