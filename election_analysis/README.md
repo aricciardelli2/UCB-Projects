@@ -6,7 +6,9 @@ The purpose of this project is to provide analysis of the election results from 
 
 ## Election-Audit Results
 
-To analyze the results of the recent election, [python](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/PyPoll_Challenge.py) code was developed to read the [results](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.csv) from the election and output the results of the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt).![](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.png)
+To analyze the results of the recent election, [python](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/PyPoll_Challenge.py) code was developed to read the [results](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.csv) from the election and output the results of the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.png)
 
 ## Election-Audit Summary
 
