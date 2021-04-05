@@ -8,7 +8,7 @@ The purpose of this project is to provide analysis of the election results from 
 
 To analyze the results of the recent election, [python](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/PyPoll_Challenge.py) code was developed to read the [results](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.csv) from the election and output the results of the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt).
 
-Based on the results of the election analysis seen below, the results from the election are as follows:
+Based on the results of the election analysis, the results from the election are as follows:
 
 * Total Votes: 369,711
 
@@ -24,7 +24,7 @@ Candidate Votes:
 * Raymon Anthony Doane: 3.1% (11,606)
 * Winning Candidate: Diana DeGette: 73.8% (272,892)
 
-In summary, Diana DeGette won the congressional election with 272,892 votes for 73.8% of the 369,711 total votes and Denver County had the highest voter turnout.
+In summary, Diana DeGette won the congressional election with 272,892 votes for 73.8% of the 369,711 total votes and Denver County had the highest voter turnout. This information can also be found in the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt), a screenshot of which is below..
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.png)
 
