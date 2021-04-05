@@ -1,23 +1,20 @@
-# The data we need to retrieve.
-# 1. The total number of votes cast
-# 2. A complete list of candidates who received votes
-# 3. The percentage of votes each candidate won
-# 4. The total number of votes each candidate won
-# 5. The winner of the election based on popular vote.
-
+# Add dependencies
 import csv
 import os
 
-# Assign a variable for the file to load and the path.
+# Assign file path of data to be read
 file_to_read = os.path.join("resources", "election_results.csv")
-# Create a filename variable to a direct or indirect path to the file.
+# Assign file path of results to be outputted
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# 1. Initialize variables.
+# Initialize total vote counting variable
 total_votes = 0
+
+# Initialize candidate variables
 candidate_options = []
 candidate_votes = {}
 
+# Initialize winning candidate variables
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
@@ -25,37 +22,56 @@ winning_percentage = 0
 # Open the election results and read the file.
 with open(file_to_read) as election_data:
 
-    # To do: read and analyze the data.
+    # Create reader object for the input csv.
     file_reader = csv.reader(election_data)
 
-    # Skip the header row
-    next(file_reader)
+    # Skip the header row.
+    headers = next(file_reader)
 
-    # Print each row in the CSV file.
+    # Iterate through the csv and count votes.
     for row in file_reader:
-        #2. Add to the total vote count.
+        # Increase the total vote count by 1.
         total_votes += 1
         
+        # Assign the current candidate name to the candidate name value of the current row.
         candidate_name = row[2]
 
+        # Add the candidate name to the list of candidates if it is not already present.
         if candidate_name not in candidate_options:
             candidate_options.append(candidate_name)
             candidate_votes[candidate_name] = 0
         
+        # Increase the vote total for the current candidate by 1.
         candidate_votes[candidate_name] += 1
+
+# Open the election analysis and write to the file.
+with open(file_to_save, "w") as txt_file:
+
+    # Text for election summary results
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n"
+    )
     
+    print(election_results, end="")
+    txt_file.write(election_results)
+
     for candidate in candidate_options:
         votes = candidate_votes[candidate]
         vote_percentage = float(votes)/float(total_votes)*100
         
-        print(f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        txt_file.write(candidate_results)
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
             winning_percentage = vote_percentage
             winning_candidate = candidate
 
-    winnint_candidate_summary = (
+    winning_candidate_summary = (
         f"-------------------------\n"
         f"Winner: {winning_candidate}\n"
         f"Winning Vote Count: {winning_count:,}\n"
@@ -63,4 +79,6 @@ with open(file_to_read) as election_data:
         f"-------------------------\n"
     )
     
-    print(winnint_candidate_summary)
+    print(winning_candidate_summary)
+    txt_file.write(winning_candidate_summary)
+
