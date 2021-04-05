@@ -24,10 +24,14 @@ Candidate Votes:
 * Raymon Anthony Doane: 3.1% (11,606)
 * Winning Candidate: Diana DeGette: 73.8% (272,892)
 
-In summary, Diana DeGette won the congressional election with 272,892 votes for 73.8% of the 369,711 total votes and Denver County had the highest voter turnout. This information can also be found in the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt), a screenshot of which is below..
+In summary, Diana DeGette won the congressional election with 272,892 votes for 73.8% of the 369,711 total votes and Denver County had the highest voter turnout. This information can also be found in the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt), a screenshot of which is below.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.png)
 
 ## Election-Audit Summary
 
-To gain insights on which stocks Steve should advise his parents to invest in, [analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/stock-analysis/VBA_Challenge.xlsm) was performed on results of historical stock performance in 2018. The total daily volume of trades as well as the anual return for 12 targeted stocks was calculated to determine high performing stocks for 2018. Assessing the table of stock performance from 2018 we see that many of the targeted stocks performed well.
+The election results analysis python script was successfully able to determine the results of the election, finding the total votes, votes for each candidate and county, and the winner of the election along with the county with the highest turnout. While this python script was able to handle analyzing the results for the requested election, the script can be expanded to handle any election. This script can be expanded to handle not only multiple diffrent elections from within Colorado, but also all elections throughout the country. Do expand the functionality, two additional columns will be required in the input election results and some minor changes to the analysis python script.
+
+The additional columns required are a State column as well as an election ID column. The election ID column will be used to determine for which particular election the vote was case for and the State column will be used to collect all election results for a given State.
+
+With this additional information, changes will be needed to be made to the python code to collect votes based on these additional pieces of information. Changes include adding additional if statements and conditionals similar to those used for collecting the county and candidates. So that the results can be provided for any requested election or collection of elections from a given state.
