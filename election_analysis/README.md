@@ -2,11 +2,29 @@
 
 ## Overview of Project
 
-The purpose of this project is to provide analysis of the election results from a recent election to the election commission. The analysis of the election is performed to determine the total votes from the election, candidate and county based election totals, and the winner of the election along with the county with the highest turnout. historical stock performance focuses on stock total daily trade volume and yearly return percentage. The election commission will use the information provided to report on the results of the election.
+The purpose of this project is to provide analysis of the election results from a recent congressional election to the election commission. The analysis of the election is performed to determine the total votes from the election, candidate and county based election totals, and the winner of the election along with the county with the highest turnout. historical stock performance focuses on stock total daily trade volume and yearly return percentage. The election commission will use the information provided to report on the results of the election.
 
 ## Election-Audit Results
 
 To analyze the results of the recent election, [python](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/PyPoll_Challenge.py) code was developed to read the [results](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.csv) from the election and output the results of the [election analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/analysis/election_analysis.txt).
+
+Based on the results of the election analysis seen below, the results from the election are as follows:
+
+* Total Votes: 369,711
+
+County Votes:
+* Jefferson: 10.5% (38,855)
+* Denver: 82.8% (306,055)
+* Arapahoe: 6.7% (24,801)
+* Largest County Turnout: Denver
+
+Candidate Votes:
+* Charles Casper Stockham: 23.0% (85,213)
+* Diana DeGette: 73.8% (272,892)
+* Raymon Anthony Doane: 3.1% (11,606)
+* Winning Candidate: Diana DeGette: 73.8% (272,892)
+
+In summary, Diana DeGette won the congressional election with 272,892 votes for 73.8% of the 369,711 total votes and Denver County had the highest voter turnout.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/election_analysis/resources/election_results.png)
 
