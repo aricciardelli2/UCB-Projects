@@ -47,21 +47,21 @@ Comparing the summary of the school level results in the dataframe images below 
 
   * Impact on Scores by School Spending
 
-  Comparing the grades when binned by spending per student [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending_original.png) the suspect grades (bottom) no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the spending per student at Thomas High School.
+  Comparing the grades when binned by spending per student [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending_original.png) the suspect grades (bottom) we see no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the spending per student at Thomas High School.
   
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending.png)
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_spending_original.png)
 
   * Impact on Scores by School Size
 
-  Comparing the grades when binned by school size [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size_original.png) the suspect grades (bottom) no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the size of Thomas High School.
+  Comparing the grades when binned by school size [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size_original.png) the suspect grades (bottom) we see no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the size of Thomas High School.
   
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size.png)
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_size_original.png)
 
   * Impact on Scores by School Type
 
-  Comparing the grades when binned by school type [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type_original.png) the suspect grades (bottom) no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the Thomas High School school type.
+  Comparing the grades when binned by school type [without](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type.png) the suspect grades included (top) vs. [with](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type_original.png) the suspect grades (bottom) we see no change in any of the values. This points to the 9th grade math grades at Thomas High School not being suspiciously different in terms of the Thomas High School school type.
   
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type.png)
   ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/school_district_analysis/resources/scores_by_type_original.png)
