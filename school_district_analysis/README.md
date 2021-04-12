@@ -1,4 +1,4 @@
-# Stock Analysis with VBA
+# School Analysis with Pandas
 
 ## Overview of Project
 
