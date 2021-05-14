@@ -9,6 +9,9 @@ __pycache__/
 # Adding config.py file.
 config.py
 
+# VS Code
+.vscode/
+
 # Distribution / packaging
 .Python
 build/
