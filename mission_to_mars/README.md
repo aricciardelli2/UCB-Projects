@@ -1,5 +1,7 @@
 # Mission to Mars Web Scraping
 
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/resources/desktop_page_1.png)
+
 ## Overview of Project
 
 ### Purpose
@@ -26,15 +28,15 @@ To be able to present this scraped information on a webpage, the necessary data 
 
 Now that the information about Mars has been stored in a local MongoDB, a flask webpage is created using [app](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/app.py) file which scapes the information from the necessary webpages upon a button click, stores it in a local MongoDB, and renders the data using an [html file](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/templates/index.html) in a webpage. The resulting webpage displaying the results looks as follows:
 
-![]()
-![]()
-![]()
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/resources/desktop_page_1.png)
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/resources/desktop_page_2.png)
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/resources/desktop_page_3.png)
 
 Among the features of the site are an active green button, and circle framed images of the hemispheres of Mars. Circle frame was selected due to the circular nature of the contents of the image.
 
 Another benefit of this webpage is that it is mobile-responsive and reorders the page to stack the elements if it is on a smaller mobile device as seen in the image below.
 
-![]()
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/mission_to_mars/resources/mobile_page.png)
 
 ## Summary
 
