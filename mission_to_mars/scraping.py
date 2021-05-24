@@ -19,7 +19,8 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
-        "last_modified": dt.datetime.now()
+        "last_modified": dt.datetime.now(),
+        "hemispheres": mars_hemispheres(browser)
     }
 
     # Stop webdriver and return data
@@ -35,7 +36,7 @@ def mars_news(browser):
     browser.visit(url)
 
     # Optional delay for loading the page
-    browser.is_element_present_by_css('div.list_text', wait_time=1)
+    browser.is_element_present_by_css('div.list_text', wait_time=5)
 
     # Convert the browser html to a soup object and then quit the browser
     html = browser.html
@@ -96,6 +97,52 @@ def mars_facts():
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
+
+def mars_hemispheres(browser):
+    
+    # Use browser to visit the Mars Hemispheres URL 
+    url = 'https://marshemispheres.com/'
+    browser.visit(url)
+
+    # Create a list to hold the images and titles.
+    hemisphere_image_urls = []
+
+    # Create html soup from High Resolution Mars Link
+    html = browser.html
+    hemi_soup = soup(html, 'html.parser')
+
+    # Grab Links to the 4 Mars hemispheres
+    hemi_links = hemi_soup.find('div', class_='collapsible results').find_all('div', class_="description")
+
+    # For each link, grab the title, follow the link to the new url, and grab the full size image url for each hemisphere
+    for link in hemi_links:
+        try:
+            # Grab title
+            title = link.find('h3').get_text()
+            
+            # Grab link to hemisphere specific page and proceed to the new url
+            new_url = f"{url}{link.find('a')['href']}"
+            browser.visit(new_url)
+            
+            # Create new url html soup
+            new_html = browser.html
+            new_hemi_soup = soup(new_html, 'html.parser')
+            
+            # Grab the full size image link from the new url
+            img_link = new_hemi_soup.find('div', id='wide-image').find('a')['href']
+            img_url = f"{url}{img_link}"
+            
+            # Append the hemisphere image url and title as a dictionary to the hemispheres list
+            hemisphere_image_urls.append({
+                "img_url": img_url,
+                "title": title
+            })
+        except AttributeError:
+            hemisphere_image_urls.append({
+                "img_url": None,
+                "title": None
+            })  
+    return hemisphere_image_urls
 
 if __name__ == "__main__":
 
