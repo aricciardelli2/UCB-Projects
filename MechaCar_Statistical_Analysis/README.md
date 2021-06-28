@@ -10,11 +10,15 @@ The purpose of the [MechaCar Statistical Analysis](https://github.com/aricciarde
 
 To optimize the design of the MechaCar, AutosRUs created [50 prototypes](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/MechaCar_mpg.csv) each having a different combination of design specifications over 5 parameters to find the design for optimal fuel efficiency (MPG). To determine the optimal design, a multiple linear regression was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/MechaCarChallenge.RScript) on the 5 parameters.
 
+### Multiple Linear Regression Model
+
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/mpg_linear_regression_model.png)
 
 As seen in the output of the multiple linear regression above, the equation for mpg for the provided design parameters is `mpg = 6.27*vehicle_length + 0.00125*vehicle_weight + 0.0688*spoiler_angle + 3.55*ground_clearance - 3.41*AWD - 104`.
 
 While this equeation is useful, it is important to understand which of variables provide a non-random amount of variance to the mpg values in the dataset. To do this, a summary of multiple linear regression model was performed [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/MechaCarChallenge.RScript).
+
+### Multiple Linear Regression Model Summary
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/mpg_linear_regression_model_summary.png)
 
@@ -32,20 +36,53 @@ Another area in which assistance is needed in determining issues in manufacturin
 
 The analysis performed determed summary statistics for the PSI of coils produced under three batches. The summary statistics seen bellow include Mean PSI, Median PSI, Variance, and Standard Deviation.
 
+### Overall Summary Statistics
+
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_summary.png)
 
 The design specifications for the suspension coils is for the PSI variance not to exceed 100 PSI. In assessing the Variance column above we see that the PSI variance for all the coils produced on under the three batches is 62.3 PSI and is within specifications.
 
-It is also desired to see if there are any issues with any of the individual batches, so a similar analysis was performed 
+It is also desired to see if there are any issues with any of the individual batches, so a similar analysis was performed by grouped the PSI value by the Manufacturing Lot.
 
+### Lot Based Summary Statistics
 
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_lot_summary.png)
+
+In assessing the Variance column above we see that the PSI variance for the coils produced on under Lot1 and Lot2 (0.98 PSI and 7.47 PSI) are within design specification of PSI variance < 100 PSI. Lot3 however is out of specification with a PSI variance of 170.29 PSI and thus there is an issue with the suspension coils produced under Lot3.
 
 ## T-Tests on Suspension Coils
 
+The final piece of statistical analysis performed for the MechaCar is in determining if the suspension coils produced were statistically different from the population mean of 15,000 PSI. To make this determination, a  T-Test was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/MechaCarChallenge.RScript) on both all the coils produced.
+
+### Overall T-Test
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_t_test.png)
+
+Seen in the T-Test above for all the suspension coils, we see that the p-value is 0.06028. While this value is close to our assumed significance level of 0.05, it is not less than 0.05 and thus we fail to reject the null hypothesis that the suspension coils produced were not different from the population mean of 15,000 PSI.
+
+A determination on if the suspension coils produced were statistically different from the population mean of 15,000 PSI for each lot, so a similar T-Test was performed on each Lot subset.
+
+### Lot1 T-Test
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_lot_1_t_test.png)
+
+Seen in the T-Test above for suspension coils from Lot1, we see that the p-value is 1.0. This value is much greater than the significance level of 0.05 and thus we fail to reject the null hypothesis that the suspension coils produced were not different from the population mean of 15,000 PSI. In fact, a p-value of 1.0 means that Lot 1 was the same mean PSI value as the population.
+
+### Lot2 T-Test
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_lot_2_t_test.png)
+
+Seen in the T-Test above for suspension coils from Lot2, we see that the p-value is 0.6072. This value is much greater than the significance level of 0.05 and thus we fail to reject the null hypothesis that the suspension coils produced in Lot2 were not different from the population mean of 15,000 PSI.
+
+### Lot3 T-Test
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_lot_3_t_test.png)
+
+Seen in the T-Test above for suspension coils from Lot3, we see that the p-value is 0.04168. This value is less than the significance level of 0.05 and thus we reject the null hypothesis that the suspension coils produced in Lot3 were not different from the population mean of 15,000 PSI and state that suspension coils produced under Lot3 were statistically different from the population mean of 15,000 PSI.
 
 ## Study Design: MechaCar vs Competition
 
 
 ## Summary
 
-The [Bike Share Tableau Story](https://public.tableau.com/app/profile/al.ricciardelli/viz/BikeRentalStory/BikeRentalStory) provides many useful pieces of data to the potential investors on demand, customer base, maintanance, and turnover of the bikes. Two other data visualizations that would be useful would be seeing demand (total trips) according to weather as well as demand (total trips) aroudn holidays / non-holiday weekends.
+
