@@ -28,6 +28,17 @@ Finally, to determine if the multiple linear regression model predicts mpg of Me
 
 ## Summary Statistics on Suspension Coils
 
+Another area in which assistance is needed in determining issues in manufacturing for the MechaCar is with the suspension coils. To assist in this, analysis was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/MechaCarChallenge.RScript) on [suspension coil data](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/Suspension_Coil.csv) collected for multiple production lots.
+
+The analysis performed determed summary statistics for the PSI of coils produced under three batches. The summary statistics seen bellow include Mean PSI, Median PSI, Variance, and Standard Deviation.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/MechaCar_Statistical_Analysis/resources/psi_summary.png)
+
+The design specifications for the suspension coils is for the PSI variance not to exceed 100 PSI. In assessing the Variance column above we see that the PSI variance for all the coils produced on under the three batches is 62.3 PSI and is within specifications.
+
+It is also desired to see if there are any issues with any of the individual batches, so a similar analysis was performed 
+
+
 
 ## T-Tests on Suspension Coils
 
