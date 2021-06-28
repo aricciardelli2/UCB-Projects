@@ -82,7 +82,20 @@ Seen in the T-Test above for suspension coils from Lot3, we see that the p-value
 
 ## Study Design: MechaCar vs Competition
 
+In addition to the traditional combustion engine prototypes of the MechaCar, AutosRUs has been considering entering the burgeoning Electic Vehicle (EV) market but prototyped electric versions of the MechaCar. They are so excited about the possibilities of the EV market that they have not only created a sedan prototype EV MechaCar but a whole EV MechaCar lineup including a sedan, SUV, and pickup truck. The reason for the full lineup is because AutosRUs see that consumers are exited for EVs, no matter what the primary use (commute, outdoor activities, hauling) of the EV will be. 
+
+The number one concern of consumers about a new EV, is not performance, but range. To be successful in the EV market, AutosRU will have to show that the new line of MechaCar EVs meat the existing EV markets average range throughout the MechaCar EV lineup.
+
+To assist in determining if launching a MechaCar EV lineup will be successful, statistical analysis should be performed to determine if the prototype MechaCar EVs range is greater than the industry average for the EV sedan, SUV, and truck markets.
+
+The Null Hypothesis for determining if the MechaCar EV has better range than industry average will be that the MechaCar EV range is less than or equal to the industry average range for the given vehicle market. The Alternative Hypothesis will be that the MechaCar EV range is greater than the industry average range for the given vehicle market.
+
+To perform this analysis a one sample T-Test should be performed the Range of a number of MechaCar EV prototype produced. There should be three T-Tests, one for each market (sedan, SUV, and Truck) and the prototypes ranges should be compared to the industry average (or population mean) for that market. The reason that a one sample T-Test is used is because we are attempting to determine if there is a statistical difference between the means of the prototype sample dataset and the existing market population dataset.
+
+To perform this analysis, the ranges need to be collected from a random sample of a large number of prototypes for each type of EV (sedan, SUV, Truck). This is needed to meet the T-Test requirements of: numerical and continuous data (range measurements), randomly sampled from population (random prototypes), normally distributed (assumed), sample size is reasonably large (large number of prototypes), and similar variance (assumed).
+
+In performing this statistical anlaysis of AutosRUs' EV MechaCar lineup, we will be able to determine if the EV lineup has better than industry average range which is a good indicator that a new lineup of EVs will be succesful with consumers.
 
 ## Summary
 
-
+In assisting AutosRUs with statistical analysis of their MechaCar prototypes, we helped identify areas where MPG could be improved as well as found issues with a subset of the manufacturing lots of suspension coils. We additionally proposed a possible Study between MechaCar and the Competition to determine if a prototype EV lineup would be sucessful in the market. This information will help AutosRUs make informed decision to help create the best MechaCar and there are many other statistical investigations of the MechaCar prototypes could help AutosRUs improve their MechaCar.
