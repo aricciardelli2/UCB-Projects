@@ -2,35 +2,40 @@
 
 ## Overview of the Analysis
 
-The purpose of this project is to use Amazon .
+The purpose of this project is to use historical Amazon Review [data](https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt) to determine if paid Vine reviews bias towards more positive reviews than unpaid non-Vine reviews. For this analysis, the historical Video Game review [data](https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Video_Games_v1_00.tsv.gz) was used.
 
 ## Results
 
-To gain insights on PyBer differences in different types of cities, [analysis](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/PyBer_Challenge.ipynb) was performed on [city](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/resources/city_data.csv) and [ride](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/resources/ride_data.csv) data provided by PyBer. After performing the analysis on the ride, fare, and driver information, the following results are available.
+To assess if paid Vine reviews impact review scores, the percentage of 5-Star reviews for both Vine and Non-Vine reviews was determined. To arrive at these values, the Video Game review [data](https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Video_Games_v1_00.tsv.gz) was first uploaded to an AWS RDS by using the AWS [notebook](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/Amazon_Reviews_ETL.ipynb) in Google Colab. The database in AWS is a Postgres Database and the tables created follow the [schema](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/challenge_schema.sql) provided.
 
-### Number of Vine and Non-Vine Reviews
+After the Video Game review data was uploaded to AWS, the [Vine table](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/resources/vine_table.csv) was downloaded as a CSV. The Vine and non-Vine review stats were then calculated using the Vine [notebook](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/Vine_Review_Analysis.ipynb).
 
-The results from the PyBer rides, fare and driver data grouped by city type show a distinct difference in key results depending on if the city was Urban, Suburban, or Rural as seen in the following table.
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/analysis/pyber_summary_df.png)
-The results show that the total rides, drivers and fares are highest in Urban cities, followed by Suburban, and followed last by Rural cities. The opposite is true however for fare per ride and fare per driver results. The average fare per ride and per driver are both highest for Rural cities, follwed by Suburban cities, and follwed last by Urban cities.
+### Vine and Non-Vine Stats
 
-### Number of Vine and Non-Vine Five-Star Reviews
+From the Vine [notebook](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/Vine_Review_Analysis.ipynb) analysis, the Vine and non-Vine stats were calculated.
 
-When assessing total fare by city type over time, the results show concistant differences between Urban, Suburban, and Rural results as seen in the following plot. 
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/analysis/PyBer_fare_summary.png)
-Comparing the total fare amounts by city type by week from 1/1/2019 to 4/29/2019, it is clear that the overall total fare results ranking Urban, Suburban and Rural cities is consistant every week. There additionally is minimal variance in the fare total within each city type week over week. Overall, the plot above points to little dependence on the week of the year from January to the end of April on PyBers rides, fares, and driver results.
+**Vine Stats**
 
-### Percentage of Vine and Non-Vine Five-Star Reviews
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/analysis/paid_stats.png)
 
-When assessing total fare by city type over time, the results show concistant differences between Urban, Suburban, and Rural results as seen in the following plot. 
-![](https://github.com/aricciardelli2/UCB-Projects/blob/main/PyBer_Analysis/analysis/PyBer_fare_summary.png)
-Comparing the total fare amounts by city type by week from 1/1/2019 to 4/29/2019, it is clear that the overall total fare results ranking Urban, Suburban and Rural cities is consistant every week. There additionally is minimal variance in the fare total within each city type week over week. Overall, the plot above points to little dependence on the week of the year from January to the end of April on PyBers rides, fares, and driver results.
+**Non-Vine Stats**
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/amazon_vine_analysis/analysis/unpaid_stats.png)
+
+#### Number of Vine and Non-Vine Reviews
+
+From the stats listed above, the Vine (Paid) total reviews were 94 and non-Vine (Unpaid) were 40,471. This number alone does not point to a bias in review score but does show that there is a large difference in the number of Vine and non-Vine reviews.
+
+#### Number of Vine and Non-Vine Five-Star Reviews
+
+From the stats listed above, the Vine (Paid) total 5-Star reviews were 48 and non-Vine (Unpaid) were 15,663. This number alone does not point to a bias in review score but does show that there is a large difference in the number of Vine and non-Vine 5-Star reviews.
+
+#### Percentage of Vine and Non-Vine Five-Star Reviews
+
+From the stats listed above, the Vine (Paid) total reviews were 51.1% and non-Vine (Unpaid) were 38.7%. As these numbers are both normalized for the number of reviews in both the Vine and Non-Vine categories, this information can be used to determine if there is a bias towards positive reviews from the paid Vine program. As the percentage of 5-Star reviews is 13.4% higher for the Vine reviews vs. Non-Vine reviews, there appears to be a bias towards positive reviews from the paid Vine program.
 
 ## Summary
 
-In assessing the rides, fares, and driver results as grouped by city type, I provide 3 recommendations to the CEO.
-* As Rural cities have the highest average fare per ride, but also the lowest total number of rides, I recommend targeting a higher ride total in Rural area. If PyBer is able to increase the total rides in Rural cities, possibly through an external marketing campaigns, these rides will be more profitable to PyBer than in Urban or Suburban cities.
-* As Rural cities have the highest average fare per driver but also the lowest total number of drivers, I recommend targeting shifting some of the Urban drivers to Rural areas. If PyBer is able to increase the total drivers in Rural cities, possibly through internal outreach and information to drivers, these drivers will be make more money and be more likely to stay driving with PyBer instead of leaving to a competitor.
-* As the total fare does not substantially change over time in any of the three city types, I recommend not spending money on plans that target different types of cities at different times of year and instead focus on plans that apply throughout the year.
+From the analysis above, the percentage of 5-Star reviews is 13.4% higher for the Vine reviews vs. Non-Vine reviews, there appears to be a bias towards positive reviews from the paid Vine program. The total number of reviews being much lower in the Vine program vs. the non-Vine program it could be argued that the 5-Star percentage gap is due to the sample size difference. However, as there are nearly 100 reviews in the Vine program and the percentage difference is fairly large at ~13%, we argue that this percentage difference is genuine.
 
-These are three recommendations that I believe, based on the analysis and results provided, will help PyBer succeed in the competitive Ride Share industry.
+Additional analysis that can be performed to gain more insights into what drives a positive 5-Star review is to perform a similar analysis based on if the review was for a Verified Purchase or not.
