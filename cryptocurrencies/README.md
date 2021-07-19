@@ -10,29 +10,31 @@ In order to find groups within the Crytocurrency market, K-Mean clustering was [
 
 ### Preprocessing the Data
 
-In order for the Cryptocurreny [data](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/resources/crypto_data.csv) to be able to be clustered, preprocessing of the data was first [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb). Preprocessing steps included, filtering to traded coins, filtering to mined coins, removing null values, and others. The resulting preprocessed dataframe is scene below.
+In order for the Cryptocurreny [data](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/resources/crypto_data.csv) to be able to be clustered, preprocessing of the data was first [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb). Preprocessing steps included, filtering to traded coins, filtering to mined coins, removing null values, and others. The resulting preprocessed dataframe is seen below.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/analysis/preprocess.png)
 
 ### Reducing the Data Dimensionality
 
-In order for the Cryptocurreny [data](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/resources/crypto_data.csv) to be able to be clustered, the dimentionality of the dataframe above needed to be reduced and PCA was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb). PCA or Principal Component Analysis is used to determine the most important dimensions of a data set and reduce the dataset down to those dimensions. For this analysis, it was determined that the data set should be reduced to 3 principal components. The resultant dataframe from the PCA is scene below.
+In order for the Cryptocurreny [data](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/resources/crypto_data.csv) to be able to be clustered, the dimentionality of the dataframe above needed to be reduced and PCA was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb). PCA or Principal Component Analysis is used to determine the most important dimensions of a data set and reduce the dataset down to those dimensions. For this analysis, it was determined that the data set should be reduced to 3 principal components. The resultant dataframe from the PCA is seen below.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/analysis/pca.png)
 
 ### Cluster the Data
 
-Now that the dataset has been preprocessed and the principal components have been determined, the data is ready to be clustered using K-Means clusting. The first step of the K-Means clustering process that was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb) was determing the number of clusters appropriate for the data set. This was done by creating an Elbow plot. As scene in the plot below, the change in intertia decreases significantly after the 4th cluster, so the "Elbow" is determined to be 4 and thus we used 4 clusters in the K-Mean clustering process.
+Now that the dataset has been preprocessed and the principal components have been determined, the data is ready to be clustered using K-Means clusting. The first step of the K-Means clustering process that was [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb) was determing the number of clusters appropriate for the data set. This was done by creating an Elbow plot. As seen in the plot below, the change in intertia decreases significantly after the 4th cluster, so the "Elbow" is determined to be 4 and thus we used 4 clusters in the K-Mean clustering process.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/analysis/elbow.png)
 
-With the number of clusters determined, a K-Means model was [fitted](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb) with the dataset and predictions of the cluster of each Crytocurrency was made. The resultant dataframe with the predicted cluster is scene below.
+With the number of clusters determined, a K-Means model was [fitted](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb) with the dataset and predictions of the cluster of each Crytocurrency was made. The resultant dataframe with the predicted cluster is seen below.
 
 ![](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/analysis/cluster.png)
 
 ### Visualize the Results
 
 Finally, even though the clustering work has been completed, it is important to visualize the results to both verify that the results make sence, and to comunicate the results to customers. The results of the K-Means clustering was [plotted](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/crypto_clustering.ipynb) using a 3D scatter plot. The plot below does a great job communicating how the Cryptocurrencies are clustered and also shows that the clustering done by the K-Means algorithm make sense and have value.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/cryptocurrencies/analysis/vizualize.png)
 
 ## Summary
 
