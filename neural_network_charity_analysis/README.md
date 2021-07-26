@@ -10,19 +10,90 @@ In order to build the Neural Network to predict if a donation will be successful
 
 ### Data Preprocessing
 
-The first step in 
+The first step in building the neural network is data processing. For this data set, 4 data processing steps were [performed](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb); removing non-beneficial columns, binning columns, encoding categorical columns, and splitting the feature and target columns.
+
+* Binning columns
+
+For columns with a large nubmer of unique values, these values can be binned to reduce the complexity of the column. For this dataset, two categorical columns, `APPLICATION_TYPE` and `CLASSIFICATION`, were [determined](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) to have more than 10 [unique values](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/number_unique.png).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/number_unique.png)
+
+Note: The `ASK_AMT` column is a continuous variable column and a large number of unique values. Therefor we are not going to bin that column.
+
+The `APPLICATION_TYPE` and `CLASSIFICATION` were then [binned](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) so that values with relatively low frequency are grouped into an `OTHER` value. The [APPLICATION_TYPE](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/application_type_binning.png) and [CLASSIFICATION](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/classification_binning.png) binning is seen below.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/application_type_binning.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/classification_binning.png)
+
+* Encoding categorical columns
+
+Neural networks can not handle categorical data. To categorical columns that do provide value to the model, we must encode them into multiple binary columns, one for each unique value of the categorical column. To do this, first, the categorical columns were [determined](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/categorical_columns.png)
+
+After determing the categorical columns, the columns were [encoded](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/encoded_columns.png)
+
+* Removing non-beneficial columns
+
+For the neural network to be as successful as possible, columns that do not add any meaningful information should be removed so that they are not included in the target or feature columns. For this dataset, the `EIN` and `NAME` columns are identifying numbers and name of the company and don't have an impact on if the donation will be successful. Therefor, they were [dropped](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) from the dataframe before extracting the target and feature columns. This can be seen [below](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/removed_columns.png).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/removed_columns.png)
+
+* Determining the Target Column
+
+The target column is the column the neural network is attempting to predict. For this neural network, the goal is to predict if the donation will be succesful. Thus the target column is `IS_SUCCESSFUL`. The [splitting](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) of the target column from the dataframe to the target array is seen [below](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/target_features.png).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/target_features.png)
+
+* Determining the Features Columns
+
+The feature columns are the columns the neural network is using to predict the target column. For this neural network, the goal is to predict if the donation will be succesful. Thus the feature columns are all the columns besides `IS_SUCCESSFUL`. The [splitting](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) of the feature columns from the dataframe to the feature array is seen [below](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/target_features.png).
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/target_features.png)
+
+### Compiling, Training, and Evaluating the Model
+
+Now that the data is preprocessed. It is time to train the neural network. The target and feature data was [first](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) split into train and test data and then scaled. Then the neural network was [built](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) using a certain number of hidden layers, neurons, and different activation functions. The network is then [compiled](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) and trained on a number of epochs or iterations. Predictions are then made and the accuracy score is [calculated](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb). Unfortunately, while different combinations of these values were attempted, the goal of an accuracy greater than 75% was not achieved. The following are the different Neural Networks developed and the accuracy scores.
+
+* Attempt 0
+
+The initial [attempt](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) was made using the original preprocessed dataset, using 2 hidden layers with 80 and 30 nearons each, both hidden layers using the relu activation function, and an output layer using the sigmoid activation function. The network was then trained using 50 epochs. The accuracy for this attempt was 72.55%. With this as a baseline network, three other networks were attempted.
+
+* Attempt 1
+
+The first [iteration](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.ipynb) on the neural network was made removing the `ASK_AMT` column from the original preprocessed dataset, using 2 hidden layers with 160 and 60 nearons each, both hidden layers using the relu activation function, and an output layer using the sigmoid activation function. The network was then trained using 50 epochs. The accuracy for this attempt was 72.51%.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_1_neurons.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_1_summary.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_1_accuracy.png)
+
+* Attempt 2
+
+The second [iteration](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity_Optimzation.ipynb) on the neural network was made removing the `ASK_AMT` column from the original preprocessed dataset, using 3 hidden layers with 80, 30, and 30 nearons each, both hidden layers using the relu activation function, and an output layer using the sigmoid activation function. The network was then trained using 50 epochs. The accuracy for this attempt was 72.45%.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_2_layers.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_2_summary.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_2_accuracy.png)
+
+* Attempt 3
+
+The second [iteration](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity_Optimzation.ipynb) on the neural network was made removing the `ASK_AMT` column from the original preprocessed dataset, using 2 hidden layers with 80 and 30 nearons each, both hidden layers using the tanh activation function, and an output layer using the sigmoid activation function. The network was then trained using 50 epochs. The accuracy for this attempt was 72.36%.
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_3_function.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_3_summary.png)
+
+![](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/Analysis/attempt_3_accuracy.png)
+
+The best iteration after the original base neural network was Attempt 1 and that model is contained in the [optimized notebook](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity_Optimzation.ipynb).
 
 ## Summary
 
-After using 6 different models, 4 logistic regression models with resampling and 2 ensemble learning models, the following accuracy, precision, recall, and f1 values were determined for each model.
-
-| Modle                                            | Accuracy    | Precision     | Recall  | f1    |
-| :---                                             |    :----:   |    :----:     |:----:   |  ---: |
-| Random Oversampling                              | 67.4%       | 0.01          | 0.74    | 0.02  |
-| SMOTE Oversampling                               | 66.2%       | 0.01          | 0.63    | 0.02  |
-| Cluster Centroid Undersampling                   | 54.5%       | 0.01          | 0.69    | 0.01  |
-| SMOTEEN Combination Over and Under Sampling      | 64.5%       | 0.01          | 0.72    | 0.02  |
-| Balanced Random Forest Classifier                | 78.9%       | 0.03          | 0.70    | 0.06  |
-| Easy Ensemble AdaBoost Classifier                | 93.2%       | 0.09          | 0.92    | 0.16  |
-
-Based on the above results we recommend using a different model for predicting credit card risk. The 4 resampling techniques did not produce recalls greater than 0.01 or f1 scores greater than 0.02. The ensemble learning models performed better but still did not have precision values for predicting high-risk credit greater than 0.09 or f1 scores greater than 0.16. While ensemble learning models did prove to be performing better than resampling techniques, more work is needed to develop a usable model in predicting high-risk credit.
+After creating one original neural network and attempting to optimize that neural network using different number of neurons, hidden layers, and activation function, we determine the best neural network model attempted to predict is a donation will be succusful was the original. There are countless ways to optimize the model, so there is definitely room to improve. The original and best optimized models are available respectively [here](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity.h5) and [here](https://github.com/aricciardelli2/UCB-Projects/blob/main/neural_network_charity_analysis/AlphabetSoupCharity_Optimization.h5).
